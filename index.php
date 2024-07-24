@@ -47,7 +47,9 @@ $hotels = [
     ],
 ];
 
-// $mostaHotels = (var_dump ($hotels));
+if ( array_values($hotels)  == true){
+    
+}
 
 ?>
 
@@ -77,20 +79,20 @@ $hotels = [
                     <th scope="col">Distanza dal centro</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                        <?php foreach($hotels as $hotel){?>
+                <?php foreach($hotels as $hotel){?>
+                <tr>
                             <th scope="row">1</th>
                             <td><?php echo $hotel['name'] ?></td>
                             <td><?php echo $hotel['description'] ?></td>
                             <td><?php echo $hotel['parking'] ?></td>
                             <td><?php echo $hotel['vote'] ?></td>
-                            <td><?php echo $hotel['distance_to_center'] ?></td>                    
-                  </tr>
+                            <td><?php echo $hotel['distance_to_center'] ?></td>                
+                </tr>
+                <?php }?>
                 </tbody>
              </table>
-
-        <?php }?>
 </ul>
 </body>
 </html>
