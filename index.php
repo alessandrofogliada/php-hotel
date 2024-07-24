@@ -65,15 +65,32 @@ $hotels = [
 
 <!-- Prima stampate in pagina i dati, senza preoccuparvi dello stile. -->
 
-<ul>
-        <?php foreach($hotels as $hotel){?>
-            <li>
-                <?php foreach($hotel as $info){
-                    echo $info;
-                } ?>
-            </li>
+<ul>         
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name </th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distanza dal centro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php foreach($hotels as $hotel){?>
+                            <th scope="row">1</th>
+                            <td><?php echo $hotel['name'] ?></td>
+                            <td><?php echo $hotel['description'] ?></td>
+                            <td><?php echo $hotel['parking'] ?></td>
+                            <td><?php echo $hotel['vote'] ?></td>
+                            <td><?php echo $hotel['distance_to_center'] ?></td>                    
+                  </tr>
+                </tbody>
+             </table>
+
         <?php }?>
 </ul>
-
 </body>
 </html>
