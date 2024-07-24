@@ -1,0 +1,79 @@
+<!-- 
+Stampare tutti i nostri hotel con tutti i dati disponibili.Iniziate in modo graduale.
+
+Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
+Il valore relativo al parcheggio deve essere indicato con “Sì” o “No” -->
+
+<?php
+
+// Partiamo da questo array di hotel. https://www.codepile.net/pile/OEWY7Q1G
+
+$hotels = [
+
+    [
+        'name' => 'Hotel Belvedere',
+        'description' => 'Hotel Belvedere Descrizione',
+        'parking' => true,
+        'vote' => 4,
+        'distance_to_center' => 10.4
+    ],
+    [
+        'name' => 'Hotel Futuro',
+        'description' => 'Hotel Futuro Descrizione',
+        'parking' => true,
+        'vote' => 2,
+        'distance_to_center' => 2
+    ],
+    [
+        'name' => 'Hotel Rivamare',
+        'description' => 'Hotel Rivamare Descrizione',
+        'parking' => false,
+        'vote' => 1,
+        'distance_to_center' => 1
+    ],
+    [
+        'name' => 'Hotel Bellavista',
+        'description' => 'Hotel Bellavista Descrizione',
+        'parking' => false,
+        'vote' => 5,
+        'distance_to_center' => 5.5
+    ],
+    [
+        'name' => 'Hotel Milano',
+        'description' => 'Hotel Milano Descrizione',
+        'parking' => true,
+        'vote' => 2,
+        'distance_to_center' => 50
+    ],
+];
+
+// $mostaHotels = (var_dump ($hotels));
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- inclusione di bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>PHP Hotel</title>
+</head>
+<body>
+
+<!-- Prima stampate in pagina i dati, senza preoccuparvi dello stile. -->
+
+<ul>
+        <?php foreach($hotels as $hotel){?>
+            <li>
+                <?php foreach($hotel as $info){
+                    echo $info;
+                } ?>
+            </li>
+        <?php }?>
+</ul>
+
+</body>
+</html>
