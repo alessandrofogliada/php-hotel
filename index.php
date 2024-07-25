@@ -1,7 +1,5 @@
-<!-- 
-Stampare tutti i nostri hotel con tutti i dati disponibili.Iniziate in modo graduale.
+<!--
 
-Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella.
 Il valore relativo al parcheggio deve essere indicato con “Sì” o “No” -->
 
 <?php
@@ -47,9 +45,9 @@ $hotels = [
     ],
 ];
 
-if ( array_values($hotels)  == true){
-    
-}
+// if (($hotels[0]['parking'])  == true){
+//     print_r(array_replace($hotels [0] ['parking'] , $hotels [0] ['Si'] ));
+// }
 
 ?>
 
@@ -67,6 +65,8 @@ if ( array_values($hotels)  == true){
 
 <!-- Prima stampate in pagina i dati, senza preoccuparvi dello stile. -->
 
+<!-- Dopo aggiungete Bootstrap e mostrate le informazioni con una tabella  -->
+
 <ul>         
             <table class="table">
                 <thead>
@@ -81,16 +81,16 @@ if ( array_values($hotels)  == true){
                 </thead>
 
                 <tbody>
-                <?php foreach($hotels as $hotel){?>
+                <?php foreach($hotels as $hotel):?>
                 <tr>
                             <th scope="row">1</th>
                             <td><?php echo $hotel['name'] ?></td>
                             <td><?php echo $hotel['description'] ?></td>
-                            <td><?php echo $hotel['parking'] ?></td>
+                            <td><?php echo $hotel['parking'] ? 'Si' : 'No' ?></td>
                             <td><?php echo $hotel['vote'] ?></td>
                             <td><?php echo $hotel['distance_to_center'] ?></td>                
                 </tr>
-                <?php }?>
+                <?php endforeach;?>
                 </tbody>
              </table>
 </ul>
